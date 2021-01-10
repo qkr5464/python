@@ -1,3 +1,2 @@
-korean,english,mathematics,science = map(int, input().split())
-
-print((korean+english+mathematics+science)//4)
+a, b, c, d = map(int, input().split())
+print((a+b+c+d) // 4)
