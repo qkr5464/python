@@ -1,0 +1,4 @@
+price = int(input())
+name = input()
+discount = int(name[4:])
+print(price - discount)
