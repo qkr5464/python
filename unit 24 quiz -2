@@ -1,0 +1,4 @@
+priceList = list(map(int, input().split(';')))
+priceList.sort(reverse=True)
+for price in priceList:
+    print('%9s' %(format(price,',')))
