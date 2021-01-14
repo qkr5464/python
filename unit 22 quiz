@@ -1,0 +1,5 @@
+a, b = map(int, input().split())
+d = [2 ** i for i in range(a, b + 1)]
+d.pop(1)
+d.pop(-2)
+print(d)
