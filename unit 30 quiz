@@ -1,0 +1,23 @@
+korean, english, mathematics, science = map(int, input().split()) 
+def get_min_max_score(*args): 
+    minScore = 101
+    maxScore = -1
+    for score in args:
+        if minScore > score:
+            minScore = score
+        if maxScore < score:
+            maxScore = score
+    return minScore, maxScore
+def get_average(**kwargs):
+    sumScore = 0
+    cnt = 0
+    for subject, score in kwargs.items():
+        sumScore += score
+        cnt += 1
+    return sumScore / cnt
+min_score, max_score = get_min_max_score(korean, english, mathematics, science) 
+average_score = get_average(korean=korean, english=english, mathematics=mathematics, science=science) 
+print('낮은 점수: {0:.2f}, 높은 점수: {1:.2f}, 평균 점수: {2:.2f}'.format(min_score, max_score, average_score))   
+min_score, max_score = get_min_max_score(english, science) 
+average_score = get_average(english=english, science=science) 
+print('낮은 점수: {0:.2f}, 높은 점수: {1:.2f}, 평균 점수: {2:.2f}'.format(min_score, max_score, average_score))
