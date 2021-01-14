@@ -1,0 +1,11 @@
+cache = [-1 for i in range(100)]
+def fib(n):
+    if n < 2:
+        return n
+    if cache[n] != -1:
+        return cache[n]
+    
+    cache[n] = fib(n-1) + fib(n-2)
+    return cache[n]
+n = int(input())
+print(fib(n))
