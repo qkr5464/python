@@ -1,0 +1,5 @@
+def calc():
+    result = 0
+    while True:
+        exp = (yield result)
+        result = eval(exp)
