@@ -1,0 +1,7 @@
+import re
+p = re.compile('^https?://[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+/[a-zA-Z0-9-_/.?=]*')
+inputDomain = input()
+if p.match(inputDomain) != None:
+    print(True)
+else:
+    print(False)
