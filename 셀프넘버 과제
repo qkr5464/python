@@ -1,0 +1,16 @@
+isSN = [0]*10000
+
+def Make_SN(n):
+    n_list = []
+    summ = n
+    for j in str(n):
+        summ = summ + int(j)
+    return summ
+
+for i in range(10000):
+    if(Make_SN(i) < 10000):
+        isSN[Make_SN(i)] = 1
+
+for j in range(10000):
+    if(isSN[j] == 0):
+        print(j)
