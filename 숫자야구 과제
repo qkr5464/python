@@ -1,0 +1,35 @@
+import random
+
+def ntol(num):
+    d = [0,0,0]
+    for i in range(3):
+        d[2-i] = num % 10
+        num = num // 10
+    return d
+
+def num_bs(a, b):
+    n_s,n_b = 0,0
+    b_list = ntol(b)
+    for i in range(3):
+        for j in range(3):
+            if(a[i] == b_list[j]):
+                if(i == j):
+                    n_s = n_s + 1
+                else:
+                    n_b = n_b + 1
+    return n_s,n_b
+
+num_s = 0
+num_list = []
+random_num = random.randint(1,9)
+for i in range(3):
+    while random_num in num_list:
+        random_num = random.randint(1,9)
+    num_list.insert(0,random_num)
+    
+while num_s < 3:
+    user_num = int(input())
+    num_s, num_b = num_bs(num_list,user_num)
+    print("strike:",num_s," ball:",num_b)
+    
+print("성공!")
