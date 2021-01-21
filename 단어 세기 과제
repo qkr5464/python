@@ -1,0 +1,29 @@
+with open("article.txt","r",encoding='UTF8') as f:
+    word_list = f.read()
+    word_list = word_list.replace("\n",' ')
+    word_list = word_list.replace("\"",' ')
+    word_list = word_list.replace(",",' ')
+    word_list = word_list.replace(".",' ')
+    word_list = word_list.lower()
+    word_list = word_list.split()
+    
+for i in range(len(word_list)):
+    word_list[i] = word_list[i].rstrip('\'s')
+
+num_word = []
+word = []
+for i in word_list:
+    if i in word:
+        num_word[word.index(i)] += 1
+    else:
+        word.append(i)
+        num_word.append(1)
+print("article 내 단어 개수:",len(word_list),"\n")
+for i in range(3):
+    a = max(num_word)
+    print(word[num_word.index(a)],"  : %d회"%a)
+    num_word[num_word.index(a)] = 0
+    while (max(num_word) == a):
+        print(word[num_word.index(max(num_word))])
+        num_word[num_word.index(max(num_word))] = 0
+    print("")
